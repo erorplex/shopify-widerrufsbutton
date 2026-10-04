@@ -1,0 +1,23 @@
+{%- comment -%}
+  Widerrufsfunktion nach § 356a BGB: Button „Vertrag widerrufen“ in der Fußzeile.
+  Einbau: Theme-Editor → Gruppe „Fußzeile“ → Abschnitt hinzufügen → „Benutzerdefiniertes Liquid“
+  → diesen Text einfügen → Speichern. Kein Eingriff in den Theme-Code.
+  Ziel ist die Formularseite /pages/vertrag-widerrufen (Shopify Forms).
+  Die Klassen übernehmen den Zweitbutton des Themes: button--secondary (Dawn und verwandte
+  Themes), button-secondary (Horizon). Passt das nicht, Farben unten im <style> setzen.
+{%- endcomment -%}
+{%- liquid
+  assign wb_ziel = routes.root_url | append: '/pages/vertrag-widerrufen' | replace: '//', '/'
+  if request.locale.iso_code == 'en'
+    assign wb_text = 'Withdraw from contract here'
+  else
+    assign wb_text = 'Vertrag widerrufen'
+  endif
+-%}
+<div class="wb-widerruf">
+  <a class="button button--secondary button-secondary wb-widerruf__link" href="{{ wb_ziel }}">{{ wb_text }}</a>
+</div>
+<style>
+  .wb-widerruf { display: flex; justify-content: center; padding: 1.5rem 1rem; }
+  .wb-widerruf__link { font-weight: 600; text-decoration: none; }
+</style>

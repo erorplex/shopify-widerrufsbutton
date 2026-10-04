@@ -1,0 +1,7 @@
+{
+  "name": {{ metaobject.firstName | json }},
+  "vertrag": {{ metaobject.bestellnummerOderVertragZB1001 | json }},
+  "artikel": {{ metaobject.betroffeneArtikelOptionalLeerLassenFrDieGanzeBestellung | json }},
+  "email": {{ metaobject.email | json }},
+  "eingang_utc": "{{ metaobject.system.createdAt }}"
+}

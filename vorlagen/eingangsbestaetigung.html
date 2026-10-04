@@ -1,0 +1,35 @@
+{%- comment -%}
+  Eingangsbestätigung nach § 356a Abs. 4 BGB: Inhalt der Erklärung, Datum und Uhrzeit des Eingangs.
+  Layout-Typ „Rich Text / HTML“ in der App „Workflow Transactional Email“.
+  Betreff:       Eingangsbestätigung Ihres Widerrufs
+  Vorschautext:  Ihr Widerruf ist bei uns eingegangen.
+  Variablen aus Flow (vorlagen/flow-variablen.json): name, vertrag, artikel, email, eingang_utc.
+  Vor dem Einfügen: die drei Zeilen unter diesem Kommentar mit deinen Angaben füllen
+  (wie im Impressum). Eingefügt wird alles ab „{%- assign marke“, dieser Kommentar nicht.
+{%- endcomment -%}
+{%- assign marke = 'Dein Shopname' -%}
+{%- assign ruecksendung = 'Musterfirma GmbH, Musterstraße 1, 12345 Musterstadt, Deutschland' -%}
+{%- assign pflichtangaben = 'Musterfirma GmbH · Musterstraße 1 · 12345 Musterstadt · Geschäftsführung: Vorname Nachname · Amtsgericht Musterstadt HRB 12345' -%}
+{%- comment -%} Flow liefert den Zeitpunkt in UTC; hier nach deutscher Zeit umrechnen. {%- endcomment -%}
+{%- assign eingang = variables.eingang_utc | date: "%d.%m.%Y um %H:%M Uhr", "Europe/Berlin" -%}
+<p>Guten Tag {{ variables.name }},</p>
+
+<p>wir bestätigen den Eingang Ihres Widerrufs.</p>
+
+<p><strong>Eingegangen am:</strong> {{ eingang }}</p>
+
+<p><strong>Ihre Erklärung</strong><br>
+Hiermit widerrufe ich den von mir geschlossenen Vertrag.<br>
+Name: {{ variables.name }}<br>
+Bestellnummer oder Vertrag: {{ variables.vertrag }}<br>
+Betroffene Artikel: {{ variables.artikel | default: "keine Angabe (gesamte Bestellung)" }}<br>
+E-Mail für diese Bestätigung: {{ variables.email }}</p>
+
+<p><strong>So geht es weiter</strong><br>
+Bitte senden Sie die Ware an: {{ ruecksendung }}.<br>
+Die Erstattung richtet sich nach unserer Widerrufsbelehrung. Bei Fragen antworten Sie einfach auf diese E-Mail.</p>
+
+<p>Viele Grüße<br>
+{{ marke }}</p>
+
+<p style="font-size:12px;color:#666">{{ pflichtangaben }}</p>
