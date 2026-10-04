@@ -1,9 +1,11 @@
-# Widerrufsbutton für Shopify
+# Widerrufsbutton für Shopify: kostenlos einrichten (§ 356a BGB)
 
 Seit dem 19. Juni 2026 brauchen Onlineshops, die an Verbraucher verkaufen, eine elektronische
 Widerrufsfunktion: den Button „Vertrag widerrufen“ (§ 356a BGB). Diese Anleitung baut ihn in
 Shopify nur mit Bordmitteln und kostenlosen Apps, ohne Programmieren und ohne eigenen Server.
 Rechne mit etwa einer Stunde.
+
+*English summary at the [end of this page](#in-english).*
 
 > **Keine Rechtsberatung.** Die Anleitung beschreibt eine technische Umsetzung, die wir so in
 > eigenen Shops betreiben. Ob sie für deinen Shop genügt, klärst du im Zweifel mit einer Anwältin
@@ -181,6 +183,49 @@ Widerrufsbelehrung und Datenschutzerklärung nach
 - **Button an jeder einzelnen Bestellung im Kundenkonto:** Das ginge nur mit einer eigenen App.
   Der Menüpunkt im Kundenkonto und der Button auf jeder Seite genügen.
 
+## Häufige Fragen
+
+**Für wen ist der Widerrufsbutton Pflicht?**
+Für Unternehmer, die über eine Website oder App Fernabsatzverträge mit Verbrauchern schließen,
+seit dem 19. Juni 2026. Reine B2B-Shops betrifft es nicht, weil nur Verbraucher ein
+Widerrufsrecht haben.
+
+**Reicht ein Kontaktformular oder eine E-Mail-Adresse?**
+Nein. Verlangt sind die Beschriftung „Vertrag widerrufen“, die Abfrage von Name, Vertrag und
+E-Mail, eine Schaltfläche „Widerruf bestätigen“ und eine sofortige Eingangsbestätigung mit Datum
+und Uhrzeit.
+
+**Kostet das wirklich nichts?**
+Shopify Forms und Shopify Flow sind kostenlos. Die Mail-App verschickt im Free-Plan 500 Mails je
+30 Tage, das reicht für die meisten Shops.
+
+**Funktioniert das mit meinem Theme?**
+Mit jedem Theme, das in der Fußzeile den Abschnitt „Benutzerdefiniertes Liquid“ anbietet. Getestet
+mit Dawn 15, Horizon 4 und einem Theme auf Basis von Ride.
+
+**Gilt das auch in Österreich oder anderen EU-Ländern?**
+Die Pflicht kommt aus der EU-Richtlinie 2023/2673 und gilt in der ganzen EU. Beschriftung und
+Rechtstexte richten sich nach dem jeweiligen Landesrecht; diese Anleitung ist auf Deutschland
+zugeschnitten. Der technische Aufbau ist überall gleich.
+
+## Mitmachen
+
+Mit einem anderen Theme getestet, einen Fehler gefunden oder eine Shopify-Oberfläche hat sich
+geändert? Ein [Issue](../../issues) hilft allen, die nach dir kommen. Verbesserungen gern als Pull
+Request.
+
 ## Lizenz
 
 [CC0 1.0](LICENSE): frei verwendbar, auch ohne Namensnennung. Ohne Gewähr.
+
+## In English
+
+A free, no-code way to add the electronic withdrawal function required by EU Directive
+2023/2673 (in Germany: § 356a BGB, in force since 19 June 2026) to a Shopify store. It uses only
+Shopify Forms, Shopify Flow and the free plan of the Workflow Transactional Email app: a
+“withdraw from contract here” button in the footer of every page, a form with a “confirm
+withdrawal” button, and an automatic confirmation email with content, date and time.
+
+The guide is in German because it follows German law and German storefront labels. The setup is
+the same in every EU country; adapt the labels and legal texts to your national law. Issues in
+English are welcome.
